@@ -1,0 +1,39 @@
+/* General*/
+
+body{
+   background-color: rgba(235, 205, 166, 0.452);
+}
+
+main .carousel{
+   width: 50%;
+   margin-left: 25%;
+   margin-top: 20px;
+}
+
+/* Clasificación */
+.titulo{
+   text-align: center;
+   margin-top: 40px;
+   margin-bottom: 40px;
+   font-size: 20px;
+   font-weight: 600;
+   color: rgb(19, 19, 24);
+   text-decoration: underline overline;
+}
+
+.leyenda{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   margin: auto;
+   text-align:center;
+   width: 25%;
+   font-size: 13px;
+}
+
+
+.imgLocal,
+.imgVisitante{
+   height: 40px;
+}
+
+
