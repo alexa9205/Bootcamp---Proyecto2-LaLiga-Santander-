@@ -9,6 +9,8 @@ function crearEquipos(equipos){
         let link = document.createElement("a");
         link.href = equipos[i].website;
         link.style.color = "black";
+        link.style.fontWeight = "700";
+    
 
         let equipo = document.createElement("div");
         equipo.classList.add("col")
