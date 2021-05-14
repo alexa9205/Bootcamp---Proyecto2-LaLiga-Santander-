@@ -4,11 +4,49 @@ body{
    background-color: rgba(235, 205, 166, 0.452);
 }
 
-main .carousel{
-   width: 50%;
-   margin-left: 25%;
-   margin-top: 20px;
+
+
+/* HOME */ 
+
+.imgLiga{
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   background-color: black;
 }
+
+.imgLiga img{
+   align-items: center;
+   width: 60%;
+   margin-left: 10%;
+}
+.imgLiga .fb-page{
+   margin-top: 10px;
+}
+/* HOME - Equipos Españoles*/
+
+.tituloespania{
+   text-align: center;
+   margin-top: 30px;
+}
+
+.equiposEspania2{
+   display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(150px, auto);
+    margin-top: 50px;
+    margin-left: 40px;
+}
+.container > a > div{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.imgEquipos{
+   height: 70px;
+}
+
 
 /* Clasificación */
 .titulo{
@@ -34,6 +72,11 @@ main .carousel{
 .imgLocal,
 .imgVisitante{
    height: 40px;
+}
+main .carousel{
+   width: 50%;
+   margin-left: 25%;
+   margin-top: 5px;
 }
 
 
