@@ -11,16 +11,17 @@ body{
 .imgLiga{
    display: grid;
    grid-template-columns: 2fr 1fr;
-   background-color: black;
+   background-image: url(/Imagenes/laliga-santander-v-mixto-negativo-1200x1200.jpg);
+   background-size: 100px 100px;
 }
 
-.imgLiga img{
-   align-items: center;
-   width: 60%;
-   margin-left: 10%;
+.imgLiga video{
+   width: 90%;
+   margin-left: 6%;
+   margin-top: 9%; 
 }
 .imgLiga .fb-page{
-   margin-top: 10px;
+   margin-top: 5px;
 }
 /* HOME - Equipos Españoles*/
 
@@ -73,5 +74,6 @@ main .carousel{
    margin-left: 25%;
    margin-top: 5px;
 }
+
 
 
