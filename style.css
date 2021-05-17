@@ -75,5 +75,45 @@ main .carousel{
    margin-top: 5px;
 }
 
+/* Estadisticas */
+
+.table-light .primera{
+   text-align: center;
+}
 
 
+/* media querys */
+@media screen and (max-width: 667px) {
+  /* entrada video y pag-fb*/
+ .imgLiga{
+    display: flex;
+    flex-direction: column;
+ }
+ .fb-page{
+    width: 400px;
+    margin-left: 5px;
+ }
+
+ main .cabecera{
+    width: 50%;
+ }
+
+  /* clasificacion */
+  .titulo{
+     font-size: 12px;
+  }
+ .tablaclsf{
+    width: 98%;
+    font-size: 10px;
+    margin-left: -5px;
+ }
+ .leyenda{
+    font-size: 10px;
+ }
+ .imgLocal,
+ .imgVisitante{
+    height: 10px;
+ }
+
+
+}
