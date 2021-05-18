@@ -78,7 +78,11 @@ main .carousel{
 /* Estadisticas */
 
 .table-light .primera{
-   text-align: center;
+  text-align: center;
+}
+
+.imgEquiposEst{
+   height: 30px;
 }
 
 

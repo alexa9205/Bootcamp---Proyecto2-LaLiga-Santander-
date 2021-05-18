@@ -1,4 +1,4 @@
-let inglaterra = {
+let inglaterraEquipos = {
     "count": 20,
     "filters": {},
     "competition": {

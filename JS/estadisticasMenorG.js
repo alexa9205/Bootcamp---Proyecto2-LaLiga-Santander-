@@ -72,7 +72,7 @@ function top5menosGvisitante(estadisticasPartido2) {
 
         let escudoEq = document.createElement("img");
         escudoEq.setAttribute("src", "https://crests.football-data.org/" + equipos + ".svg");
-        escudoEq.classList.add("imgEquipos");
+        escudoEq.classList.add("imgEquiposEst");
 
         let datosTablaEq2 = [
             escudoEq,
