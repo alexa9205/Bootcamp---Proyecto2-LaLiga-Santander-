@@ -96,14 +96,14 @@ function crearEstadisticas(partidos) {
 
     console.log(estadisticasPartido); 
 
-    top5mejores(estadisticasPartido);
+    top5mejoresAvgGoles(estadisticasPartido);
 }
 
-function top5mejores(estadisticasPartido){
+function top5mejoresAvgGoles(estadisticasPartido){
 
     let top5estadisticas = estadisticasPartido.slice(0,5);
 
-    let crearTabla = document.getElementById("tableEstadistica");
+    let crearTabla = document.getElementById("tablaEstadistica");
 
     for(let i = 0; i<top5estadisticas.length; i++){
         const tr = document.createElement("tr");
