@@ -1,4 +1,4 @@
-let francia = {
+let franciaEquipos = {
     "count": 20,
     "filters": {},
     "competition": {
