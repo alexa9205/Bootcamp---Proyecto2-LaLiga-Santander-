@@ -1,7 +1,7 @@
 /* General*/
 
 body{
-   background-color: rgba(235, 205, 166, 0.452);
+   background-color: white;
 }
 
 
@@ -74,6 +74,32 @@ main .carousel{
    margin-left: 25%;
    margin-top: 5px;
 }
+
+
+/* Resultados */ 
+
+.filtros{
+   display: flex;
+   flex-direction: row;
+   margin-left: 9%;
+   margin-bottom: 20px;
+}
+
+.filtros .radiobotones{
+   margin-left: 27%;
+   display: flex;
+   flex-direction: row;
+}
+
+.radiobotones div{
+   margin-right: 30px;
+}
+.radiobotones label{
+   font-size: 15px;
+   font-weight: 700;
+}
+
+
 
 /* Estadisticas */
 
