@@ -64,6 +64,47 @@ body{
    font-size: 13px;
 }
 
+.bodytabla tr:nth-of-type(1) > td:first-of-type,
+.bodytabla tr:nth-of-type(2) > td:first-of-type,
+.bodytabla tr:nth-of-type(3) > td:first-of-type,
+.bodytabla tr:nth-of-type(4) > td:first-of-type{
+   background-color:rgba(35, 35, 240, 0.945);
+}
+
+.bodytabla tr:nth-of-type(5) > td:first-of-type,
+.bodytabla tr:nth-of-type(6) > td:first-of-type{
+   background-color: rgb(128,0,0);
+}
+
+.bodytabla tr:nth-of-type(7) > td:first-of-type{
+   background-color: rgb(179, 134, 11);
+}
+
+.bodytabla tr:nth-of-type(18) > td:first-of-type,
+.bodytabla tr:nth-of-type(19) > td:first-of-type,
+.bodytabla tr:nth-of-type(20) > td:first-of-type{
+   background-color:red;
+}
+
+.bodytabla td:nth-child(1){
+   text-align: center;
+   font-weight: 700;
+}
+
+.leyenda2{
+   display: flex;
+   flex-direction: column;
+   margin-left: 9%;
+}
+
+.leyenda2 div p{
+   font-weight: 700;
+}
+
+.carousel-item img{
+   height:380px;
+   width:180px;
+}
 
 .imgLocal,
 .imgVisitante{
@@ -86,7 +127,8 @@ main .carousel{
 }
 
 .filtros .radiobotones{
-   margin-left: 27%;
+   margin-left: 25%;
+   margin-top: 3%;
    display: flex;
    flex-direction: row;
 }
@@ -128,22 +170,47 @@ main .carousel{
     width: 50%;
  }
 
+ /* Resultados */ 
+
+ table .tablapartidos{
+    width: 70%;
+    font-size: 10px;
+ }
+  form div{
+     display: flex;
+     flex-direction: column;
+ }
+
+ form .filtros .radiobotones{
+    display: flex;
+    flex-direction: column;
+ }
+
   /* clasificacion */
   .titulo{
      font-size: 12px;
   }
  .tablaclsf{
-    width: 98%;
-    font-size: 10px;
+    font-size: 12px;
     margin-left: -5px;
  }
  .leyenda{
     font-size: 10px;
  }
+
+ .leyenda2{
+    font-size: 12px;
+ }
+
  .imgLocal,
  .imgVisitante{
     height: 10px;
  }
+
+ main .carousel{
+   display: none;
+ }
+
 
 
 }

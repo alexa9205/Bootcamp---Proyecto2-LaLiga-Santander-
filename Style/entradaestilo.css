@@ -9,7 +9,8 @@
 
 body {
     margin: 0;
-    background-color: black;
+    background-color:black;
+    
 
 }
 
@@ -114,4 +115,39 @@ body {
 .boton3:hover .start button {
     display: block;
     transition: transform 1s, filter 1s ease-in-out;
+}
+
+@media screen and (max-width: 667px){
+    .fondo{
+        width: 200px;
+        height: 400px;
+        margin-top:60%;
+    }
+    .titulo-imagenes{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        margin-top: -20%;
+        margin-left: 35%;
+    }
+
+    .start button{
+        border: none;
+        border-top: none;
+        border-bottom: none;
+        border-radius: 1px;
+        background-color: none;
+        font-family: 'Rubik', sans-serif;
+        color: #db0000;
+        letter-spacing: none;
+        padding: 5px 20px;
+        width: 170%;
+        font-size: 8px;
+        font-weight: 600;
+        display: none;
+        cursor: pointer;
+        margin-left: -20px;
+        
+    }
+
 }
