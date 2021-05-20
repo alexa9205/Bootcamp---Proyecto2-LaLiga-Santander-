@@ -62,18 +62,21 @@ function callEventButton() {
     buscar.addEventListener("click", () => {
         filtrarNombreEquipo(dataPartidos.matches);
     })
+
+    let resetear = document.getElementById("botonreset");
+    resetear.addEventListener("click", () => {
+        resetearFiltros();
+        crearTabla(dataPartidos.matches);
+    })
 }
 
 function limpiarTabla() {
     document.getElementById("tableMatches").innerText = "";
 }
 
-
 function filtrarNombreEquipo(matches) {
     let datosEntrada = document.querySelector("input").value;
-
     let radioBoton = document.querySelector("input[type=radio]:checked")
-
     let nombreEquipoInput = matches.filter((p) => {
         if (p.homeTeam.name.toLowerCase().includes(datosEntrada.toLowerCase()) || p.awayTeam.name.toLowerCase().includes(datosEntrada.toLowerCase())) {
             return true;
@@ -82,11 +85,21 @@ function filtrarNombreEquipo(matches) {
         }
     });
 
+    if (datosEntrada == "") {
+        return crearTabla(dataPartidos.matches);
+    }
+
+    if (!isNaN(datosEntrada)) {
+        alert("Solo letras, por favor 😀");
+        return crearTabla(dataPartidos.matches);
+    }
+
     if (radioBoton === null) {
         return crearTabla(nombreEquipoInput);
     }
 
     let filtroInput = nombreEquipoInput.filter(partidos => {
+
         if (radioBoton.value === "Ganado") {
             if (partidos.homeTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "HOME_TEAM" || partidos.awayTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "AWAY_TEAM") {
                 return true;
@@ -99,14 +112,23 @@ function filtrarNombreEquipo(matches) {
             }
         }
 
-        if (partidos.score.winner === null && radioBoton.value === "Proximos") {
+        if (partidos.status === "SCHEDULED" && radioBoton.value === "Proximos") {
             return true;
         }
 
         if (partidos.score.winner === "DRAW" && radioBoton.value === "Empatado") {
             return true;
         }
-        
+
     })
     crearTabla(filtroInput);
+}
+
+
+function resetearFiltros() {
+    document.getElementById("filtro").value = "";
+    var radioBoton = document.getElementsByName("estadoPartido");
+    for (value in radioBoton) {
+        radioBoton[value].checked = false;
+    }
 }

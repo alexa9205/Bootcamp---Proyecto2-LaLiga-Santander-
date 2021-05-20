@@ -17,21 +17,21 @@
   <nav class="navbar sticky-top navbar-light bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="home.html">
-        <img src="/Imagenes/laliga-santander-v-mixto-negativo-1200x1200.jpg" alt="" width="50" height="50"
+        <img src="/Imagenes/laliga-santander-v-300x300.png" alt="" width="40" height="40"
           class="d-inline-block align-text-top">
       </a>
       <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
-          <a class="nav-link active bg-primary" aria-current="page" href="inicio.html">Inicio</a>
+          <a class="nav-link active bg-danger" aria-current="page" href="inicio.html">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active bg-primary" href="partidosLaLiga.html">Resultados</a>
+          <a class="nav-link active bg-danger" href="partidosLaLiga.html">Resultados</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active bg-primary" href="clasificacionLaLiga.html">Clasificacion</a>
+          <a class="nav-link active bg-danger" href="clasificacionLaLiga.html">Clasificacion</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active bg-primary" href="estadisticas.html">Estadisticas</a>
+          <a class="nav-link active bg-danger" href="estadisticas.html">Estadisticas</a>
         </li>
       </ul>
     </div>
@@ -40,9 +40,10 @@
   <form>
     <div class="filtros">
       <div class="nombre_eq">
-        <input id="filtro" type="search" placeholder="Ej: Real Madrid" required />
+        <label for="filtro"><strong>Escribe el nombre del equipo que desea buscar*:</strong></label><br/>
+        <input type="text" id="filtro"  placeholder="Ej: Real Madrid" pattern="[a-zA-Z]" required>
         <input type="button" value="Buscar" id="boton" class="btn btn-primary">
-        <input type="submit" value="Reset" id="boton" class="btn btn-danger">
+        <input type="reset" value="Reset" id="botonreset" class="btn btn-danger">
       </div>
       <div class="radiobotones">
         <div>
@@ -65,9 +66,8 @@
     </div>
   </form>
 
-
   <div class="container table-responsive">
-    <table id="table" class="table table-dark table-striped border border-primary">
+    <table id="table" class="tablapartidos table table-dark table-striped border border-primary">
       <thead class="table-light">
         <tr>
           <th colspan="2">Local</th>
