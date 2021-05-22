@@ -152,18 +152,18 @@ function filtrarNombreEquipo(partidos) {
             }
 
         }
-        if (radioBoton.value === "Empatado") {
-            if (partidos.status === "DRAW") {
-                return true;
-            }else{
-                alertify.alert("⚠️ Tu equipo no ha empatado en ningun partido 😀");
-                return crearTabla(nombreEquipoInput);
-            }
+        // if (radioBoton.value === "Empatado") {
+        //     if (partidos.status === "DRAW") {
+        //         return true;
+        //     }else{
+        //         alertify.alert("⚠️ Tu equipo no ha empatado en ningun partido 😀");
+        //         return crearTabla(nombreEquipoInput);
+        //     }
             
-        }
-        // if (partidos.score.winner === "DRAW" && radioBoton.value === "Empatado") {
-        //     return true;
         // }
+        if (partidos.score.winner === "DRAW" && radioBoton.value === "Empatado") {
+            return true;
+        }
 
     })
     crearTabla(filtroInput);
