@@ -1,6 +1,38 @@
-crearTabla(dataPartidos.matches);
-filtrarNombreEquipo(dataPartidos.matches);
-callEventButton();
+function getFetch() {
+    const url = "https://api.football-data.org/v2/competitions/2014/matches"
+    fetch(url, {
+        method: "GET",
+        headers: {
+            "X-Auth-Token": "059e535324dc40b6ad400487fc71dc33"
+        }
+    }).then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+    }).then(data => {
+
+        let partidos = data.matches
+
+        let buscar = document.getElementById("boton");
+        buscar.addEventListener("click", () => {
+            filtrarNombreEquipo(partidos);
+        })
+
+        let resetear = document.getElementById("botonreset");
+        resetear.addEventListener("click", () => {
+            resetearFiltros();
+            crearTabla(partidos);
+        })
+
+        quitarspinner();
+        crearTabla(partidos);
+
+    }).catch(err => {
+        console.log(err);
+        alert("Ha ocurrido un ERROR, vuelve a recargar la pagina !")
+    })
+}
+getFetch();
 
 function crearTabla(partidos) {
 
@@ -57,27 +89,26 @@ function crearTabla(partidos) {
 
 }
 
-function callEventButton() {
-    let buscar = document.getElementById("boton");
-    buscar.addEventListener("click", () => {
-        filtrarNombreEquipo(dataPartidos.matches);
-    })
-
-    let resetear = document.getElementById("botonreset");
-    resetear.addEventListener("click", () => {
-        resetearFiltros();
-        crearTabla(dataPartidos.matches);
-    })
-}
-
 function limpiarTabla() {
     document.getElementById("tableMatches").innerText = "";
 }
 
-function filtrarNombreEquipo(matches) {
+function filtrarNombreEquipo(partidos) {
     let datosEntrada = document.querySelector("input").value;
     let radioBoton = document.querySelector("input[type=radio]:checked")
-    let nombreEquipoInput = matches.filter((p) => {
+
+    if (datosEntrada == "") {
+        alertify.alert("⚠️ Por favor, introduzca el nombre del equipo que desea buscar😀")
+        return crearTabla(partidos);
+    }
+
+    if (!isNaN(datosEntrada)) {
+        alertify.alert("⚠️ Solo letras, por favor 😀");
+        resetearFiltros();
+        return crearTabla(partidos);
+    }
+
+    let nombreEquipoInput = partidos.filter((p) => {
         if (p.homeTeam.name.toLowerCase().includes(datosEntrada.toLowerCase()) || p.awayTeam.name.toLowerCase().includes(datosEntrada.toLowerCase())) {
             return true;
         } else {
@@ -85,13 +116,11 @@ function filtrarNombreEquipo(matches) {
         }
     });
 
-    if (datosEntrada == "") {
-        return crearTabla(dataPartidos.matches);
-    }
+    if (nombreEquipoInput.length == 0) {
+        alertify.alert("⚠️ El equipo que busca no juega en <i>LaLiga Santander</i>😀");
+        resetearFiltros();
+        return crearTabla(partidos);
 
-    if (!isNaN(datosEntrada)) {
-        alert("Solo letras, por favor 😀");
-        return crearTabla(dataPartidos.matches);
     }
 
     if (radioBoton === null) {
@@ -124,11 +153,15 @@ function filtrarNombreEquipo(matches) {
     crearTabla(filtroInput);
 }
 
-
 function resetearFiltros() {
     document.getElementById("filtro").value = "";
     var radioBoton = document.getElementsByName("estadoPartido");
     for (value in radioBoton) {
         radioBoton[value].checked = false;
     }
+}
+
+function quitarspinner() {
+    document.getElementById("preloader").style.display = "none";
+    document.getElementById("loader").style.visibility = "hidden";
 }
