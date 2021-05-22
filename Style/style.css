@@ -257,8 +257,8 @@ main .carousel{
 
  .equiposEspania2{
    display: grid;
-   grid-template-columns: repeat(6, 1fr);
-   grid-gap: 5px;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap: 10px;
    grid-auto-rows: minmax(150px, auto);
    margin-top: 40px;
    margin-left: 40px;
