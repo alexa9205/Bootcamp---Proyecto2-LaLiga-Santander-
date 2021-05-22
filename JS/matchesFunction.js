@@ -142,25 +142,11 @@ function filtrarNombreEquipo(partidos) {
         }
 
 
-        if (radioBoton.value === "Proximos") {
-            if (partidos.status === "SCHEDULED") {
-                return true;
-
-            } else {
-                alertify.alert("⚠️Se acabo la temporada! No quedan partidos pendientes por jugar☹️. Mientras tanto puedes comprobar los resultados de tu equipo favorito. Nos vemos la proxima temporada 😀!")
-                return crearTabla(nombreEquipoInput);
-            }
+        if (partidos.status === "SCHEDULED" && radioBoton.value === "Proximos") {
+             return true
 
         }
-        // if (radioBoton.value === "Empatado") {
-        //     if (partidos.status === "DRAW") {
-        //         return true;
-        //     }else{
-        //         alertify.alert("⚠️ Tu equipo no ha empatado en ningun partido 😀");
-        //         return crearTabla(nombreEquipoInput);
-        //     }
-            
-        // }
+       
         if (partidos.score.winner === "DRAW" && radioBoton.value === "Empatado") {
             return true;
         }
