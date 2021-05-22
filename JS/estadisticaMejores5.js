@@ -1,115 +1,106 @@
-crearEstadisticas(dataPartidos.matches);
+function getFetch() {
+    const url = "https://api.football-data.org/v2/competitions/2014/matches"
+    fetch(url, {
+        method: "GET",
+        headers: {
+            "X-Auth-Token": "059e535324dc40b6ad400487fc71dc33"
+        }
+    }).then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+    }).then(data => {
+        let partidos = data.matches;
+
+        quitarspinner()
+        crearEstadisticas(partidos);
+        calcularEstadisticas2(partidos);
+
+    }).catch(err => {
+        console.log(err);
+        alert("Ha ocurrido un ERROR, vuelve a recargar la pagina !")
+    })
+}
+getFetch();
 
 function crearEstadisticas(partidos) {
-    // let partidos = dataPartidos;
-
-    let estadisticasPartido = []; // La array vacía que cogerá los datos 
-    // Hacemos el for para iterar por todos los partidos
-    // con la condición de que si el partido no esta acabado pasamos a mirar el siguiente 
+    let estadisticasPartido = [];
 
     for (let i = 0; i < partidos.length; i++) {
         let estadoPartido = partidos[i].status;
         if (estadoPartido !== "FINISHED") {
             continue
-        } 
-            //declarar las variables con los datos que necesitamos 
+        }
 
-            let idEqLocal = partidos[i].homeTeam.id;
-            let idEqVisitante = partidos[i].awayTeam.id;
+        let idEqLocal = partidos[i].homeTeam.id;
+        let idEqVisitante = partidos[i].awayTeam.id;
 
-            let nombreEqLocal = partidos[i].homeTeam.name;
-            let nombreEqVisitante = partidos[i].awayTeam.name;
+        let nombreEqLocal = partidos[i].homeTeam.name;
+        let nombreEqVisitante = partidos[i].awayTeam.name;
 
-            let golesEqLocal = partidos[i].score.fullTime.homeTeam;
-            let golesEqVisitante = partidos[i].score.fullTime.awayTeam;
+        let golesEqLocal = partidos[i].score.fullTime.homeTeam;
+        let golesEqVisitante = partidos[i].score.fullTime.awayTeam;
 
+        let eqLocalEncontrado;
+        estadisticasPartido.forEach(localEncontrado => {
+            if (localEncontrado.id === idEqLocal) {
+                eqLocalEncontrado = localEncontrado
+            }
+        })
 
-            let eqLocalEncontrado;
-            // recoremos el array con un bucle forEach o bien con un for loop 
-            // para encontrar el objeto con el mismo id que el equipo local del partido
-
-            //  for (let m = 0; m < estadisticasPartido.length; m++){
-            //  if (idEquipoLocal == estadisticasPartido[m].id){
-            //      eqLocalEncontrado = estadisticasPartido[m];
-            //   }
-            // }
-
-            estadisticasPartido.forEach(localEncontrado => {
-                if (localEncontrado.id === idEqLocal) {
-                    eqLocalEncontrado = localEncontrado
-                }
+        if (eqLocalEncontrado == undefined) {
+            estadisticasPartido.push({
+                id: idEqLocal,
+                name: nombreEqLocal,
+                goals: golesEqLocal,
+                matches: 1
             })
 
-            // si el objeto buscado no se encuentra crearlo y añadirlo al array con estas keys ( id, nombre, goles y partido)
+        } else {
+            eqLocalEncontrado.matches++
+            eqLocalEncontrado.goals += golesEqLocal;
+        }
 
-            if (eqLocalEncontrado == undefined) {
-                estadisticasPartido.push({
-                    id: idEqLocal,
-                    name: nombreEqLocal,
-                    goals: golesEqLocal,
-                    matches: 1
-                })
-
-            } else { // Si existe actualizamos los goles y los partidos
-                eqLocalEncontrado.matches++ //(eqLocalEncontrado.matches = eqLocalEncontrado.matches + 1)
-                eqLocalEncontrado.goals += golesEqLocal; //(eqLocalEncontrado.goals = eqLocalEncontrado.goals + golesEqLocal)
+        let eqVisitanteEncontrado;
+        estadisticasPartido.forEach(visitanteEncontrado => {
+            if (visitanteEncontrado.id === idEqVisitante) {
+                eqVisitanteEncontrado = visitanteEncontrado
             }
-
-
-            //se hace igual que con el equipo Local: recorrer array, si no encontrado crear y añadir, si existe actualizamos datos
-            let eqVisitanteEncontrado;
-            estadisticasPartido.forEach(visitanteEncontrado => {
-                if (visitanteEncontrado.id === idEqVisitante) {
-                    eqVisitanteEncontrado = visitanteEncontrado
-                }
+        })
+        if (eqVisitanteEncontrado == undefined) {
+            estadisticasPartido.push({
+                id: idEqVisitante,
+                name: nombreEqVisitante,
+                goals: golesEqVisitante,
+                matches: 1
             })
-            if (eqVisitanteEncontrado == undefined) {
-                estadisticasPartido.push({
-                    id: idEqVisitante,
-                    name: nombreEqVisitante,
-                    goals: golesEqVisitante,
-                    matches: 1
-                })
-            } else {
-                eqVisitanteEncontrado.matches++ //(eqVisitanteEncontrado.matches = eqLocalEncontrado.matches + 1)
-                eqVisitanteEncontrado.goals += golesEqVisitante; //(eqVisitanteEncontrado.goals + golesEqLocal)
-            }
-        
+        } else {
+            eqVisitanteEncontrado.matches++
+            eqVisitanteEncontrado.goals += golesEqVisitante;
+        }
+
 
     }
 
-    // recoremos el array creado para calcular la media de goles
     for (let j = 0; j < estadisticasPartido.length; j++) {
         let mediaGoles = estadisticasPartido[j].goals / estadisticasPartido[j].matches
-        // Añadir la key avg a cada objeto, con el valor goals/matches
-        
-        // let mediaObjeto = {
-        //     avg: mediaGoles.toFixed(3)
-        // }
-
-        // Object.assign(estadisticasPartido[j], mediaObjeto);
         estadisticasPartido[j].avg = mediaGoles;
-      
+
 
     }
     estadisticasPartido.sort((a, b) => b.avg - a.avg)
-
-    console.log(estadisticasPartido); 
-
+    // console.log(estadisticasPartido);
     top5mejoresAvgGoles(estadisticasPartido);
 }
 
-function top5mejoresAvgGoles(estadisticasPartido){
+function top5mejoresAvgGoles(estadisticasPartido) {
 
-    let top5estadisticas = estadisticasPartido.slice(0,5);
-
+    let top5estadisticas = estadisticasPartido.slice(0, 5);
     let crearTabla = document.getElementById("tablaEstadistica");
 
-    for(let i = 0; i<top5estadisticas.length; i++){
+    for (let i = 0; i < top5estadisticas.length; i++) {
         const tr = document.createElement("tr");
-
         let equipos = top5estadisticas[i].id;
-
         let escudoEq = document.createElement("img");
         escudoEq.setAttribute("src", "https://crests.football-data.org/" + equipos + ".svg");
         escudoEq.classList.add("imgEquiposEst");
@@ -121,16 +112,87 @@ function top5mejoresAvgGoles(estadisticasPartido){
             top5estadisticas[i].matches,
             top5estadisticas[i].avg.toFixed(2)
         ]
-        
-        for(let j = 0; j<datosTablaEq.length; j++){
+
+        for (let j = 0; j < datosTablaEq.length; j++) {
             const td = document.createElement("td");
             td.append(datosTablaEq[j]);
             tr.appendChild(td);
-            crearTabla.appendChild(tr); 
+            crearTabla.appendChild(tr);
         }
     }
 }
-top5mejores(estadisticasPartido);
+
+function calcularEstadisticas2(matches) {
+
+    let estadisticasPartido2 = [];
+
+    for (let i = 0; i < matches.length; i++) {
+        let estadoPartido2 = matches[i].status;
+        if (estadoPartido2 !== "FINISHED") {
+            continue
+        }
+        let golesLocal = matches[i].score.fullTime.homeTeam;
+        let idEquipoVisitante = matches[i].awayTeam.id;
+        let nombreVisitante = matches[i].awayTeam.name;
+
+        let awayTeamEncontrado;
+
+        estadisticasPartido2.forEach(visitanteEncontrado => {
+            if (visitanteEncontrado.id === idEquipoVisitante) {
+                awayTeamEncontrado = visitanteEncontrado
+            }
+        })
+
+        if (awayTeamEncontrado == undefined) {
+            estadisticasPartido2.push({
+                id: idEquipoVisitante,
+                name: nombreVisitante,
+                goals: golesLocal,
+                matches: 1
+            })
+        } else {
+            awayTeamEncontrado.goals += golesLocal;
+            awayTeamEncontrado.matches++
+        }
 
 
+    }
 
+    estadisticasPartido2.sort((a, b) => a.goals - b.goals);
+    console.log(estadisticasPartido2);
+    top5menosGvisitante(estadisticasPartido2);
+}
+
+function top5menosGvisitante(estadisticasPartido2) {
+
+    let top5menosG = estadisticasPartido2.slice(0, 5);
+    let crearTabla2 = document.getElementById("tablaEstadistica2");
+
+    for (let i = 0; i < top5menosG.length; i++) {
+        const tr = document.createElement("tr");
+
+        let equipos = top5menosG[i].id;
+        let escudoEq = document.createElement("img");
+        escudoEq.setAttribute("src", "https://crests.football-data.org/" + equipos + ".svg");
+        escudoEq.classList.add("imgEquiposEst");
+
+        let datosTablaEq2 = [
+            escudoEq,
+            top5menosG[i].name,
+            top5menosG[i].goals,
+            top5menosG[i].matches
+        ]
+
+        for (let j = 0; j < datosTablaEq2.length; j++) {
+            const td = document.createElement("td");
+            td.append(datosTablaEq2[j]);
+            tr.appendChild(td);
+            crearTabla2.appendChild(tr);
+        }
+    }
+}
+
+function quitarspinner() {
+    document.getElementById("preloader").style.display = "none";
+    document.getElementById("loader").style.visibility = "hidden";
+}

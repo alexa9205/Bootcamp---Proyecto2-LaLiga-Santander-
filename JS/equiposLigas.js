@@ -1,37 +1,45 @@
-function getFetch(){
+function getFetch() {
     const url = "https://api.football-data.org/v2/competitions/2014/teams"
-    fetch(url,{
+    fetch(url, {
         method: "GET",
         headers: {
-            "X-Auth-Token" : "059e535324dc40b6ad400487fc71dc33"
+            "X-Auth-Token": "059e535324dc40b6ad400487fc71dc33"
         }
-    }).then(response =>{
-        if(response.ok){
+    }).then(response => {
+        if (response.ok) {
             return response.json();
         }
-    }).then(data =>{
-        let partidos = data.teams;
-        
-        quitarspinner();
+    }).then(data => {
+
+        let partidos = data.teams
+
+        let buscar = document.getElementById("lespaniola");
+        window.location="otrasLigas.html";
+        buscar.addEventListener("click", () => {
+            crearEquipos(partidos);
+        })
+
+        // quitarspinner();
         crearEquipos(partidos);
-       
-    }).catch(err =>{
+
+    }).catch(err => {
         console.log(err);
         alert("Ha ocurrido un ERROR, vuelve a recargar la pagina !")
     })
 }
 getFetch();
 
-function crearEquipos(equipos){
+
+function crearEquipos(equipos) {
 
     const divEquipo = document.getElementById("contenedor");
 
-    for(let i = 0; i<equipos.length; i++){
+    for (let i = 0; i < equipos.length; i++) {
         let link = document.createElement("a");
         link.href = equipos[i].website;
         link.style.color = "black";
         link.style.fontWeight = "700";
-    
+
 
         let equipo = document.createElement("div");
         equipo.classList.add("col")
@@ -51,7 +59,7 @@ function crearEquipos(equipos){
 
 }
 
-function quitarspinner() {
-    document.getElementById("preloader").style.display = "none";
-    document.getElementById("loader").style.visibility = "hidden";
-}
+// function quitarspinner() {
+//     document.getElementById("preloader").style.display = "none";
+//     document.getElementById("loader").style.visibility = "hidden";
+// }

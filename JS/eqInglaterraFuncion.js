@@ -1,6 +1,28 @@
-console.log(inglaterraEquipos.teams);
+function getFetch() {
+    const url = "https://api.football-data.org/v2/competitions/2021/teams"
+    fetch(url, {
+        method: "GET",
+        headers: {
+            "X-Auth-Token": "059e535324dc40b6ad400487fc71dc33"
+        }
+    }).then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+    }).then(data => {
+        let partidos = data.teams
+        quitarspinner();
+        crearEquipos3(partidos);
 
-function crearEquipos(equipos){
+    }).catch(err => {
+        console.log(err);
+        alert("Ha ocurrido un ERROR, vuelve a recargar la pagina !")
+    })
+}
+getFetch();
+
+
+function crearEquipos3(equipos){
 
     const divEquipo = document.getElementById("contenedor3");
 
@@ -10,7 +32,6 @@ function crearEquipos(equipos){
         link.style.color = "black";
         link.style.fontWeight = "700";
     
-
         let equipo = document.createElement("div");
         equipo.classList.add("col")
 
@@ -28,4 +49,7 @@ function crearEquipos(equipos){
 
 
 }
-crearEquipos(inglaterraEquipos.teams);
+function quitarspinner() {
+    document.getElementById("preloader").style.display = "none";
+    document.getElementById("loader").style.visibility = "hidden";
+}
