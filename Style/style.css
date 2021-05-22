@@ -267,8 +267,15 @@ main .carousel{
  form .filtros .radiobotones{
     display: flex;
     flex-direction: column;
+    margin-left: -5%;
  }
 
+ form .filtros .boton{
+    width: 60%;
+ }
+ form .filtros .texto{
+    width: 70%;
+ }
   /* clasificacion */
   .titulo{
      font-size: 12px;
