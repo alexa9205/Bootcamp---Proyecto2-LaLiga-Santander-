@@ -245,7 +245,7 @@ main .carousel{
     flex-direction: column;
  }
  .fb-page{
-    width: 400px;
+    width: 320px;
     margin-left: 5px;
  }
 
@@ -257,11 +257,15 @@ main .carousel{
 
  .equiposEspania2{
    display: grid;
-   grid-template-columns: repeat(4, 1fr);
+   grid-template-columns: repeat(3, 1fr);
    grid-gap: 10px;
    grid-auto-rows: minmax(150px, auto);
    margin-top: 40px;
    margin-left: 40px;
+}
+
+.equiposEspania2 > a{
+   font-size: 12px;
 }
 
 .equiposEspania2 :hover{
@@ -279,7 +283,7 @@ main .carousel{
 
  table .tablapartidos{
     width: 70%;
-    font-size: 10px;
+    font-size: 12px;
  }
   form div{
      display: flex;
@@ -290,7 +294,7 @@ main .carousel{
     display: flex;
     flex-direction: column;
     margin-left: -5%;
-    margin-top: 10px;
+    margin-top: 20px;
  }
 
  form .filtros .boton{
@@ -304,7 +308,7 @@ main .carousel{
      font-size: 12px;
   }
  .tablaclsf{
-    font-size: 12px;
+    font-size: 14px;
     margin-left: -5px;
  }
  .leyenda{
@@ -317,7 +321,7 @@ main .carousel{
 
  .imgLocal,
  .imgVisitante{
-    height: 10px;
+    height: 20px;
  }
 
  main .carousel{
