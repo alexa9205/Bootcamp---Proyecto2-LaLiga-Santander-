@@ -144,11 +144,15 @@ function filtrarNombreEquipo(partidos) {
 
         if (partidos.status === "SCHEDULED" && radioBoton.value === "Proximos") {
              return true
-
         }
-       
+
         if (partidos.score.winner === "DRAW" && radioBoton.value === "Empatado") {
             return true;
+        }
+
+        if ((partidos.status === "SCHEDULED") == false && radioBoton.value === "Proximos") {
+            alertify.alert("⚠️No hay proximos partidos que mostrar! La temporada vigente se ha acabado, pero proximamente tendras el nuevo calendario disponible. Hasta entonces puedes seguir viendo los resultados de esta temporada de tu equipo favorito 😀!")
+            return crearTabla(filtroInput);  
         }
 
     })
