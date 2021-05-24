@@ -1,5 +1,9 @@
-# ***LaLiga Santander***  WebV1.0
-![LaLiga Santander](https://github.com/alexa9205/Bootcamp---Proyecto2-LaLiga-Santander-/blob/master/Imagenes/laliga-santander-v-300x300.png) 
+<h1 align="center">LaLiga Santander WebV1.0</h1>
+
+<p align="center">
+      <img src="https://user-images.githubusercontent.com/81650755/119345741-9a51c380-bc99-11eb-90b3-9341beaf8d29.jpg" alt="img LigaSantaner" width="400px" height="400px">
+</p>
+
 ## Descripción de LaLiga Santander Web
  ***LaLiga Santander***  WebV1.0 consiste en un proyecto mediante cual el usuario puede acceder a la clasificación, a los resultados y las estadisticas de la Liga Española :soccer: . 
 
@@ -9,7 +13,7 @@ Para que el usuario disfrute aún más se añadieron los clubes de la Premier Le
 
 Para visualizar el proyecto, pulsa [aquí](https://resultados-liga.netlify.app/)
 
-## Funci0nalidades
+## Funcionalidades
 
 - Acceso a todas las páginas oficiales de los clubes de *LaLiga Santander*, *Premier League*, *League 1*.
 - Acceso a la clasificación general de los equipos de *LaLiga Santader*, donde el usuario podrá visualizar en cualquier momento que puesto ocupa su equipo y si está en posición para acceder a las competiciónes europeas como Champions League, Europa League o si está en posición de descenso a la *Liga SmartBank*.
@@ -18,7 +22,9 @@ Para visualizar el proyecto, pulsa [aquí](https://resultados-liga.netlify.app/)
 - Acceso al feed del Facebook de la cuenta oficial de LaLiga Santander.
 
 ## Tecnologias usadas
-![metodologias2](https://user-images.githubusercontent.com/81650755/119335963-4c36c300-bc8d-11eb-9ef7-9d256827dcba.jpg)
+<p align="center">
+      <img src="https://user-images.githubusercontent.com/81650755/119335963-4c36c300-bc8d-11eb-9ef7-9d256827dcba.jpg" slt="tecnologias">
+ </p>
 
 - **HTML5** : para hacer el esqueleto de la página web
 - **CSS3** : para el diseño de la interfaz
@@ -36,7 +42,7 @@ Como funcionalidades genéricas podemos encontrar las siguientes funciones: `get
 - `getFetch()` usada en todos los archivos JS, es la función encargada de coger los datos en tiempo real de la API, sin necesidad de usar el POSTMAN.
 - `crearTabla()` es la función encargada de crear la tabla con los equipos, cada vez que queremos filtrarlos por nombre del equipo, o bien los resultados: ganados, empatados, perdidos o próximos partidos. Interviene cada vez que es accionado alguno de los botones del filtro, pasándole un parámetro ú otro. Esta función se podría volver a usar si queremos hacer lo mismo con los equipos de las otras ligas, arriba mencionadas.
 - `quitarSpinner()` usada en todos los archivos JS, en los cual se cogen datos con la API. Su función es de "parar/ocultar" el spinner después de recibir la respuesta de la API
--`crearTablaClasifiacion()` encargada de crear la tabla de clasifiacion de los equipos de LaLiga Santander, recogiendo datos como: posicion, nombre del equipo, partidos jugados, partidos ganados, empatados o perdidos, goles marcados, goles recibidos, diferencia de goles y puntos totales. Se podría volver a usar para hacer la tabla de clasifiación de las otras ligas.
+- `crearTablaClasifiacion()` encargada de crear la tabla de clasifiacion de los equipos de LaLiga Santander, recogiendo datos como: posicion, nombre del equipo, partidos jugados, partidos ganados, empatados o perdidos, goles marcados, goles recibidos, diferencia de goles y puntos totales. Se podría volver a usar para hacer la tabla de clasifiación de las otras ligas.
 
 Como funcionalidades especificas podemos encontrar las siguiente funciónes : 
 - `limpiarTabla()` función usada para limpiar el *body* de la tabla, cada vez que realizamos una búsqueda nueva, de esta manera solo nos aparecen los nuevos resultados. Sin esta función se añadirían filas a la tabla y para poder encontrar los resultados de nuestra búsqueda tendríamos que hacer scroll hasta el final de la tabla. 
