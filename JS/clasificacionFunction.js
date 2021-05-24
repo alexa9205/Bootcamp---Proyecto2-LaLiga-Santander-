@@ -12,7 +12,7 @@ function getFetch(){
     }).then(data =>{
         let partidos = data.standings[0].table;
         quitarspinner();
-        crearTabla(partidos);
+        crearTablaClasificacion(partidos);
        
     }).catch(err =>{
         console.log(err);
@@ -21,8 +21,7 @@ function getFetch(){
 }
 getFetch();
 
-function crearTabla(clasificacion) {
-
+function crearTablaClasificacion(clasificacion) {
 
     let tabla = document.getElementById("tabla2");
 
@@ -43,7 +42,6 @@ function crearTabla(clasificacion) {
         let golescontra = clasificacion[i].goalsAgainst;
         let goldiferencia = clasificacion[i].goalDifference;
         let puntos = clasificacion[i].points;
-
 
         let ultpartidos = clasificacion[i].form;
         ultpartidos = ultpartidos.replace(/D/g,"🟡");
