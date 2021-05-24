@@ -130,13 +130,13 @@ function filtrarNombreEquipo(partidos) {
     let filtroInput = nombreEquipoInput.filter(partidos => {
 
         if (radioBoton.value === "Ganado") {
-            if (partidos.homeTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "HOME_TEAM" || partidos.awayTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "AWAY_TEAM") {
+            if ((partidos.homeTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "HOME_TEAM") || (partidos.awayTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "AWAY_TEAM")) {
                 return true;
             }
         }
 
         if (radioBoton.value === "Perdido") {
-            if (partidos.homeTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "AWAY_TEAM" || partidos.awayTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "HOME_TEAM") {
+            if ((partidos.homeTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "AWAY_TEAM") || (partidos.awayTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "HOME_TEAM")) {
                 return true;
             }
         }
