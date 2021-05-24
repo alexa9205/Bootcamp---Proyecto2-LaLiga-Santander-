@@ -117,7 +117,7 @@ function filtrarNombreEquipo(partidos) {
     });
 
     if (nombreEquipoInput.length == 0) {
-        alertify.alert("⚠️ El equipo que busca no juega en <i>LaLiga Santander</i>😀");
+        alertify.alert("⚠️ El equipo que buscas no juega en <i>LaLiga Santander</i>☹️");
         resetearFiltros();
         return crearTabla(partidos);
 
@@ -152,7 +152,7 @@ function filtrarNombreEquipo(partidos) {
         }
 
         if ((partidos.status === "SCHEDULED") == false && radioBoton.value === "Proximos") {
-            alertify.alert("⚠️¡No hay próximos partidos que mostrar! La temporada vigente se ha acabado, pero próximamente tendrás el nuevo calendario disponible. ¡Hasta entonces puedes seguir viendo los resultados de esta temporada de tu equipo favorito!😀!")
+            alertify.alert("¡No hay próximos partidos para mostrar!☹️ <p>La temporada vigente se ha acabado, pero próximamente tendrás el nuevo calendario disponible. ¡Hasta entonces puedes seguir viendo los resultados de esta temporada de tu equipo favorito!😀</p>")
             return crearTabla(filtroInput);  
         }
 

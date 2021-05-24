@@ -89,7 +89,6 @@ function crearEstadisticas(partidos) {
 
     }
     estadisticasPartido.sort((a, b) => b.avg - a.avg)
-    // console.log(estadisticasPartido);
     top5mejoresAvgGoles(estadisticasPartido);
 }
 
