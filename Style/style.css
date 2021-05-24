@@ -235,6 +235,14 @@ main .carousel{
 .imgEquiposEst{
    height: 30px;
 }
+.titulo5{
+   font-weight: 700;
+   color: rgb(168, 53, 53);
+   font-size: 20px;
+   text-align: center;
+   margin-top: 20px;
+   text-decoration:underline;
+}
 
 
 /* media querys */
@@ -327,6 +335,16 @@ main .carousel{
  main .carousel{
    display: none;
  }
+
+ /* ESTADISTICAS */ 
+ .titulo5{
+   font-weight: 500;
+   color: rgb(168, 53, 53);
+   font-size: 14px;
+   text-align: center;
+   margin-top: 15px;
+   text-decoration:underline;
+}
 
 
 
