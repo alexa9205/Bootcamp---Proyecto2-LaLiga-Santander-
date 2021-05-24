@@ -245,8 +245,8 @@ main .carousel{
     flex-direction: column;
  }
  .fb-page{
-    width: 390px;
-    margin-left: 5px;
+    width: 360px;
+    margin-left: 32px;
  }
 
  main .cabecera{

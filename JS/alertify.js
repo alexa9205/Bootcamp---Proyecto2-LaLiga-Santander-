@@ -65,7 +65,7 @@
             }
         },
         glossary:{
-            title:'LaLiga Santander',
+            title:'<b>LaLiga Santander</b> ',
             ok: 'OK',
             cancel: 'Cancel',
             acccpt: 'Accept',
