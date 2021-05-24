@@ -24,7 +24,7 @@ function getFetch() {
             crearTabla(partidos);
         })
 
-        quitarspinner();
+        quitarSpinner();
         crearTabla(partidos);
 
     }).catch(err => {
@@ -129,9 +129,16 @@ function filtrarNombreEquipo(partidos) {
 
     let filtroInput = nombreEquipoInput.filter(partidos => {
 
+        // if (radioBoton.value === "Ganado") {
+        //     if ((partidos.homeTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "HOME_TEAM") 
+        //     || (partidos.awayTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "AWAY_TEAM")) {
+        //         return true;
+        //     }
+        // }
+
         if (radioBoton.value === "Ganado") {
-            if ((partidos.homeTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "HOME_TEAM") 
-            || (partidos.awayTeam.name.toLowerCase().includes(datosEntrada) && partidos.score.winner == "AWAY_TEAM")) {
+            if ((partidos.homeTeam.name.toLowerCase().indexOf((datosEntrada) == -1) && partidos.score.winner == "HOME_TEAM") 
+            || (partidos.awayTeam.name.toLowerCase().indexOf((datosEntrada) == -1) && partidos.score.winner == "AWAY_TEAM")) {
                 return true;
             }
         }
@@ -153,7 +160,7 @@ function filtrarNombreEquipo(partidos) {
         }
 
         if ((partidos.status === "SCHEDULED") == false && radioBoton.value === "Proximos") {
-            alertify.alert("⚠️No hay proximos partidos que mostrar! La temporada vigente se ha acabado, pero proximamente tendras el nuevo calendario disponible. Hasta entonces puedes seguir viendo los resultados de esta temporada de tu equipo favorito 😀!")
+            alertify.alert("⚠️¡No hay próximos partidos que mostrar! La temporada vigente se ha acabado, pero próximamente tendrás el nuevo calendario disponible. ¡Hasta entonces puedes seguir viendo los resultados de esta temporada de tu equipo favorito!😀!")
             return crearTabla(filtroInput);  
         }
 
@@ -169,7 +176,7 @@ function resetearFiltros() {
     }
 }
 
-function quitarspinner() {
+function quitarSpinner() {
     document.getElementById("preloader").style.display = "none";
     document.getElementById("loader").style.visibility = "hidden";
 }

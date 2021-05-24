@@ -12,7 +12,7 @@ function getFetch() {
     }).then(data => {
         let partidos = data.teams;
         quitarspinner();
-        crearEquipos2(partidos);
+        crearEquipos(partidos);
 
     }).catch(err => {
         console.log(err);
@@ -21,7 +21,7 @@ function getFetch() {
 }
 getFetch();
 
-function crearEquipos2(equipos){
+function crearEquipos(equipos){
 
     const divEquipo = document.getElementById("contenedor2");
 
