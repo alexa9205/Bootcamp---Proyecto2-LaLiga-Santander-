@@ -1,132 +1,146 @@
 /* General*/
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
 
-body{
+body {
    background-color: blanchedalmond;
 }
 
 
 
-/* HOME */ 
+/* HOME */
 
-.imgLiga{
+.imgLiga {
    display: grid;
    grid-template-columns: 2fr 1fr;
    background-color: black;
 }
 
-.imgLiga video{
+.imgLiga video {
    width: 90%;
    margin-left: 5%;
 }
-.imgLiga .fb-page{
+
+.imgLiga .fb-page {
    margin-top: 5px;
 }
+
 /* HOME - Equipos Españoles*/
 
-.tituloespania{
+.tituloespania {
    text-align: center;
    margin-top: 30px;
 }
 
-.equiposEspania2{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
-    grid-auto-rows: minmax(150px, auto);
-    margin-top: 50px;
-    margin-left: 40px;
+.equiposEspania2 {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap: 5px;
+   grid-auto-rows: minmax(150px, auto);
+   margin-top: 50px;
+   margin-left: 40px;
 }
 
-.equiposEspania2 :hover{
-    transform: scale(1.15);
-    transition: transform 1s;
+.equiposEspania2 :hover {
+   transform: scale(1.15);
+   transition: transform 1s;
 }
 
 
 /* Medidas imagenes Clubes Otras Liga, LaLiga*/
-.imgEquipos{
+.imgEquipos {
    height: 50px;
 }
 
 
 
-/* ESPERA DE DATOS - SPINNER */ 
+/* ESPERA DE DATOS - SPINNER */
 
- #preloader {
-     position: fixed;
-     top: -13%;
-     left: 0;
-     width: 100%;
-     height: 100%;
- }
- #loader {
-     display: block;
-     position: relative;
-     left: 50%;
-     top: 50%;
-     width: 150px;
-     height: 150px;
-     margin: -75px 0 0 -75px;
-     border-radius: 50%;
-     border: 3px solid transparent;
-     border-top-color: #0f0e0f;
-     -webkit-animation: spin 2s linear infinite;
-     animation: spin 2s linear infinite;
- }
- #loader:before {
-     content: "";
-     position: absolute;
-     top: 5px;
-     left: 5px;
-     right: 5px;
-     bottom: 5px;
-     border-radius: 50%;
-     border: 3px solid transparent;
-     border-top-color: #BA55D3;
-     -webkit-animation: spin 3s linear infinite;
-     animation: spin 3s linear infinite;
- }
- #loader:after {
-     content: "";
-     position: absolute;
-     top: 15px;
-     left: 15px;
-     right: 15px;
-     bottom: 15px;
-     border-radius: 50%;
-     border: 3px solid transparent;
-     border-top-color: #FF00FF;
-     -webkit-animation: spin 1.5s linear infinite;
-     animation: spin 1.5s linear infinite;
- }
- @-webkit-keyframes spin {
-     0%   {
-         -webkit-transform: rotate(0deg);
-         -ms-transform: rotate(0deg);
-         transform: rotate(0deg);
-     }
-     100% {
-         -webkit-transform: rotate(360deg);
-         -ms-transform: rotate(360deg);
-         transform: rotate(360deg);
-     }
- }
- @keyframes spin {
-     0%   {
-         -webkit-transform: rotate(0deg);
-         -ms-transform: rotate(0deg);
-         transform: rotate(0deg);
-     }
-     100% {
-         -webkit-transform: rotate(360deg);
-         -ms-transform: rotate(360deg);
-         transform: rotate(360deg);
-     }
- }
+#preloader {
+   position: fixed;
+   top: -13%;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+
+#loader {
+   display: block;
+   position: relative;
+   left: 50%;
+   top: 50%;
+   width: 150px;
+   height: 150px;
+   margin: -75px 0 0 -75px;
+   border-radius: 50%;
+   border: 3px solid transparent;
+   border-top-color: #0f0e0f;
+   -webkit-animation: spin 2s linear infinite;
+   animation: spin 2s linear infinite;
+}
+
+#loader:before {
+   content: "";
+   position: absolute;
+   top: 5px;
+   left: 5px;
+   right: 5px;
+   bottom: 5px;
+   border-radius: 50%;
+   border: 3px solid transparent;
+   border-top-color: #BA55D3;
+   -webkit-animation: spin 3s linear infinite;
+   animation: spin 3s linear infinite;
+}
+
+#loader:after {
+   content: "";
+   position: absolute;
+   top: 15px;
+   left: 15px;
+   right: 15px;
+   bottom: 15px;
+   border-radius: 50%;
+   border: 3px solid transparent;
+   border-top-color: #FF00FF;
+   -webkit-animation: spin 1.5s linear infinite;
+   animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+   0% {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+   }
+
+   100% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+   }
+}
+
+@keyframes spin {
+   0% {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+   }
+
+   100% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+   }
+}
 
 
 /* Clasificación */
-.titulo{
+.titulo {
    text-align: center;
    margin-top: 40px;
    margin-bottom: 40px;
@@ -136,88 +150,90 @@ body{
    text-decoration: underline overline;
 }
 
-.leyenda{
+.leyenda {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
    margin: auto;
-   text-align:center;
+   text-align: center;
    width: 25%;
    font-size: 13px;
 }
 
-.bodytabla tr:nth-of-type(1) > td:first-of-type,
-.bodytabla tr:nth-of-type(2) > td:first-of-type,
-.bodytabla tr:nth-of-type(3) > td:first-of-type,
-.bodytabla tr:nth-of-type(4) > td:first-of-type{
-   background-color:rgba(35, 35, 240, 0.945);
+.bodytabla tr:nth-of-type(1)>td:first-of-type,
+.bodytabla tr:nth-of-type(2)>td:first-of-type,
+.bodytabla tr:nth-of-type(3)>td:first-of-type,
+.bodytabla tr:nth-of-type(4)>td:first-of-type {
+   background-color: rgba(35, 35, 240, 0.945);
 }
 
-.bodytabla tr:nth-of-type(5) > td:first-of-type,
-.bodytabla tr:nth-of-type(6) > td:first-of-type{
-   background-color: rgb(128,0,0);
+.bodytabla tr:nth-of-type(5)>td:first-of-type,
+.bodytabla tr:nth-of-type(6)>td:first-of-type {
+   background-color: rgb(128, 0, 0);
 }
 
-.bodytabla tr:nth-of-type(7) > td:first-of-type{
+.bodytabla tr:nth-of-type(7)>td:first-of-type {
    background-color: rgb(179, 134, 11);
 }
 
-.bodytabla tr:nth-of-type(18) > td:first-of-type,
-.bodytabla tr:nth-of-type(19) > td:first-of-type,
-.bodytabla tr:nth-of-type(20) > td:first-of-type{
-   background-color:red;
+.bodytabla tr:nth-of-type(18)>td:first-of-type,
+.bodytabla tr:nth-of-type(19)>td:first-of-type,
+.bodytabla tr:nth-of-type(20)>td:first-of-type {
+   background-color: red;
 }
 
-.bodytabla td:nth-child(1){
+.bodytabla td:nth-child(1) {
    text-align: center;
    font-weight: 700;
 }
 
-.leyenda2{
+.leyenda2 {
    display: flex;
    flex-direction: column;
    margin-left: 9%;
 }
 
-.leyenda2 div p{
+.leyenda2 div p {
    font-weight: 700;
 }
 
-.carousel-item img{
-   height:380px;
-   width:180px;
+.carousel-item img {
+   height: 380px;
+   width: 180px;
 }
 
 .imgLocal,
-.imgVisitante{
+.imgVisitante {
    height: 40px;
 }
-main .carousel{
+
+main .carousel {
    width: 50%;
    margin-left: 25%;
    margin-top: 5px;
 }
 
 
-/* Resultados */ 
+/* Resultados */
 
-.filtros{
+.filtros {
    display: flex;
    flex-direction: row;
    margin-left: 9%;
    margin-bottom: 20px;
 }
 
-.filtros .radiobotones{
+.filtros .radiobotones {
    margin-left: 25%;
    margin-top: 3%;
    display: flex;
    flex-direction: row;
 }
 
-.radiobotones div{
+.radiobotones div {
    margin-right: 30px;
 }
-.radiobotones label{
+
+.radiobotones label {
    font-size: 15px;
    font-weight: 700;
 }
@@ -226,127 +242,135 @@ main .carousel{
 
 /* Estadisticas */
 
-.table-light .primera{
-  text-align: center;
+.table-light .primera {
+   text-align: center;
 }
 
-.imgEquiposEst{
+.imgEquiposEst {
    height: 30px;
 }
-.titulo5{
+
+.titulo5 {
    font-weight: 700;
    color: rgb(0, 0, 0);
    font-size: 22px;
    text-align: center;
    margin-top: 20px;
-   text-decoration:underline;
+   text-decoration: underline;
 }
 
 
 /* media querys */
 @media screen and (max-width: 667px) {
-  /* entrada video y pag-fb*/
- .imgLiga{
-    display: flex;
-    flex-direction: column;
- }
- .fb-page{
-    width: 360px;
-    margin-left: 25px;
- }
 
- main .cabecera{
-    width: 50%;
- }
+   /* entrada video y pag-fb*/
+   .imgLiga {
+      display: flex;
+      flex-direction: column;
+   }
 
- /* equipos otras ligas */ 
+   .fb-page {
+      width: 360px;
+      margin-left: 25px;
+   }
 
- .equiposEspania2{
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   grid-gap: 10px;
-   grid-auto-rows: minmax(150px, auto);
-   margin-top: 40px;
-   margin-left: 40px;
-}
+   main .cabecera {
+      width: 50%;
+   }
 
-.equiposEspania2 > a{
-   font-size: 12px;
-}
+   /* equipos otras ligas */
 
-.equiposEspania2 :hover{
-   transform: none;
-   
-}
+   .equiposEspania2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      grid-auto-rows: minmax(150px, auto);
+      margin-top: 40px;
+      margin-left: 40px;
+   }
+
+   .equiposEspania2>a {
+      font-size: 12px;
+   }
+
+   .equiposEspania2 :hover {
+      transform: none;
+
+   }
 
 
-/* Medidas imagenes Clubes Otras Liga, LaLiga*/
-.imgEquipos{
-  height: 30px;
-}
+   /* Medidas imagenes Clubes Otras Liga, LaLiga*/
+   .imgEquipos {
+      height: 30px;
+   }
 
- /* Resultados */ 
+   /* Resultados */
 
- table .tablapartidos{
-    width: 90%;
-    font-size: 14px;
- }
-  form div{
-     display: flex;
-     flex-direction: column;
- }
+   table .tablapartidos {
+      width: 90%;
+      font-size: 14px;
+   }
 
- form .filtros .radiobotones{
-    display: flex;
-    flex-direction: column;
-    margin-left: -5%;
-    margin-top: 20px;
- }
+   form div {
+      display: flex;
+      flex-direction: column;
+   }
 
- form .filtros .boton{
-    width: 60%;
- }
- form .filtros .texto{
-    width: 70%;
- }
-  /* clasificacion */
-  .titulo{
-     font-size: 15px;
-  }
- .tablaclsf{
-    font-size: 15px;
-    margin-left: -3px;
- }
- .leyenda{
-    font-size: 10px;
- }
+   form .filtros .radiobotones {
+      display: flex;
+      flex-direction: column;
+      margin-left: -5%;
+      margin-top: 20px;
+   }
 
- .leyenda2{
-    font-size: 12px;
-    margin-left: 10px;
- }
+   form .filtros .boton {
+      width: 60%;
+   }
 
- .imgLocal,
- .imgVisitante{
-    height: 20px;
- }
+   form .filtros .texto {
+      width: 70%;
+   }
 
- main .carousel{
-   display: none;
- }
+   /* clasificacion */
+   .titulo {
+      font-size: 15px;
+   }
 
- /* ESTADISTICAS */ 
- .titulo5{
-   font-weight: 600;
-   font-size: 14px;
-   text-align: center;
-   margin-top: 15px;
-   text-decoration:underline;
-}
+   .tablaclsf {
+      font-size: 15px;
+      margin-left: -3px;
+   }
 
-div table .tablaestadistica{
-   font-size: 14px;
-}
+   .leyenda {
+      font-size: 10px;
+   }
+
+   .leyenda2 {
+      font-size: 12px;
+      margin-left: 10px;
+   }
+
+   .imgLocal,
+   .imgVisitante {
+      height: 20px;
+   }
+
+   main .carousel {
+      display: none;
+   }
+
+   /* ESTADISTICAS */
+   .titulo5 {
+      font-weight: 600;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 15px;
+      text-decoration: underline;
+   }
+
+   div table .tablaestadistica {
+      font-size: 14px;
+   }
 
 
 
