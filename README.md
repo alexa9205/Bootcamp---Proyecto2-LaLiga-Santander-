@@ -1,6 +1,6 @@
-<h1 text-align="center">LaLiga Santander WebV1.0</h1>
+<h1 align="center">LaLiga Santander WebV1.0</h1>
 
-<p text-align="center">
+<p align="center">
       <img src="https://user-images.githubusercontent.com/81650755/119345741-9a51c380-bc99-11eb-90b3-9341beaf8d29.jpg" alt="img LigaSantaner" width="400px" height="400px">
 </p>
 
@@ -27,8 +27,13 @@ Para visualizar el proyecto, pulsa [aquí](http://resultados-liga.netlify.app)
 <img src="https://user-images.githubusercontent.com/81650755/119474401-64214c00-bd4c-11eb-8a9c-b1efb5c5bd58.png" width="800" height="500">
 
 
+<<<<<<< HEAD
 ## Tecnologias usadas
-<p text-align="center">
+<p align="center">
+=======
+## Tecnologías empleadas
+<p align="center">
+>>>>>>> c55b13cc598cea93b82336eefe75cd6c31cf32a0
       <img src="https://user-images.githubusercontent.com/81650755/119335963-4c36c300-bc8d-11eb-9ef7-9d256827dcba.jpg" alt="tecnologias" width="500" height="300">
  </p>
 
