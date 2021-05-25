@@ -21,16 +21,22 @@ Para visualizar el proyecto, pulsa [aquí](http://resultados-liga.netlify.app)
 - Acceso a unas tablas de estadísticas de golaveraje. El usuario puede ver top 5 equipos con mayor media de goles a favor por partido o top 5 equipos con menos goles en contra como visitante.
 - Acceso al feed del Facebook de la cuenta oficial de LaLiga Santander.
 
+
+## Caso de uso
+
+<img src="https://user-images.githubusercontent.com/81650755/119474401-64214c00-bd4c-11eb-8a9c-b1efb5c5bd58.png" width="800" height="500">
+
+
 ## Tecnologias usadas
 <p align="center">
-      <img src="https://user-images.githubusercontent.com/81650755/119335963-4c36c300-bc8d-11eb-9ef7-9d256827dcba.jpg" slt="tecnologias">
+      <img src="https://user-images.githubusercontent.com/81650755/119335963-4c36c300-bc8d-11eb-9ef7-9d256827dcba.jpg" alt="tecnologias" width="500" height="300">
  </p>
 
 - **HTML5** : para hacer el esqueleto de la página web
 - **CSS3** : para el diseño de la interfaz
 - **Bootstrap** : para el diseño de la interfaz y al mismo tiempo creando una web responsive capaz de adaptarse y que pueda ser accesible desde cualquier dispositivo: tablets, smartphone, pc, etc.. 
-- **VanillaJS** : para dar mejor rendimiento y dinamismo al sitio web y al mismo tiempo darle funcionalidad
-- **Postman** : para coger la información y los datos que se muestran en la  web 
+- **JavaScript** : para dar mejor rendimiento y dinamismo al sitio web y al mismo tiempo darle funcionalidad
+- **Postman** : para coger la información y los datos que se muestran en la  web (utilizada inicialmente, hasta que se hizo el fetch directamente en los archivos JS)
 - **Git** y **GitHub** : control de versiones y repositorio en remoto para trabajar en distintas branches
 - **AlertifyJS** : librería de JavaScript con la que se modificaron las alertas que se muestran al usuario.
 
