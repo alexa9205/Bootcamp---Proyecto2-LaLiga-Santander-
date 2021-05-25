@@ -27,7 +27,7 @@ Para visualizar el proyecto, pulsa [aquí](http://resultados-liga.netlify.app)
 <img src="https://user-images.githubusercontent.com/81650755/119474401-64214c00-bd4c-11eb-8a9c-b1efb5c5bd58.png" width="800" height="500">
 
 
-## Tecnologias usadas
+## Tecnologías empleadas
 <p align="center">
       <img src="https://user-images.githubusercontent.com/81650755/119335963-4c36c300-bc8d-11eb-9ef7-9d256827dcba.jpg" alt="tecnologias" width="500" height="300">
  </p>
