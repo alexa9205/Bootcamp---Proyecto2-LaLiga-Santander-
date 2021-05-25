@@ -1,7 +1,7 @@
 /* General*/
 
 body{
-   background-color: white;
+   background: linear-gradient(90deg, rgb(122, 228, 136) 0%, rgba(192,246,223,0.5662640056022409) 77%, rgb(208, 224, 83) 100%);
 }
 
 
@@ -11,14 +11,12 @@ body{
 .imgLiga{
    display: grid;
    grid-template-columns: 2fr 1fr;
-   background-image: url(/Imagenes/laliga-santander-v-mixto-negativo-1200x1200.jpg);
-   background-size: 100px 100px;
+   background-color: black;
 }
 
 .imgLiga video{
    width: 90%;
-   margin-left: 6%;
-   margin-top: 9%; 
+   margin-left: 5%;
 }
 .imgLiga .fb-page{
    margin-top: 5px;
@@ -237,8 +235,8 @@ main .carousel{
 }
 .titulo5{
    font-weight: 700;
-   color: rgb(168, 53, 53);
-   font-size: 20px;
+   color: rgb(0, 0, 0);
+   font-size: 22px;
    text-align: center;
    margin-top: 20px;
    text-decoration:underline;
@@ -253,8 +251,8 @@ main .carousel{
     flex-direction: column;
  }
  .fb-page{
-    width: 360px;
-    margin-left: 32px;
+    width: 340px;
+    margin-left: 20px;
  }
 
  main .cabecera{
@@ -291,7 +289,7 @@ main .carousel{
 
  table .tablapartidos{
     width: 90%;
-    font-size: 12px;
+    font-size: 14px;
  }
   form div{
      display: flex;
@@ -313,11 +311,11 @@ main .carousel{
  }
   /* clasificacion */
   .titulo{
-     font-size: 12px;
+     font-size: 15px;
   }
  .tablaclsf{
-    font-size: 14px;
-    margin-left: -5px;
+    font-size: 15px;
+    margin-left: -3px;
  }
  .leyenda{
     font-size: 10px;
@@ -325,6 +323,7 @@ main .carousel{
 
  .leyenda2{
     font-size: 12px;
+    margin-left: 10px;
  }
 
  .imgLocal,
@@ -338,12 +337,15 @@ main .carousel{
 
  /* ESTADISTICAS */ 
  .titulo5{
-   font-weight: 500;
-   color: rgb(168, 53, 53);
+   font-weight: 600;
    font-size: 14px;
    text-align: center;
    margin-top: 15px;
    text-decoration:underline;
+}
+
+div table .tablaestadistica{
+   font-size: 14px;
 }
 
 
