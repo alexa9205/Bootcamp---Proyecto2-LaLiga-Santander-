@@ -59,7 +59,7 @@ body {
 
 /* ESPERA DE DATOS - SPINNER */
 
-#preloader {
+.preloader {
    position: fixed;
    top: -13%;
    left: 0;
@@ -67,7 +67,7 @@ body {
    height: 100%;
 }
 
-#loader {
+.loader {
    display: block;
    position: relative;
    left: 50%;
@@ -82,7 +82,7 @@ body {
    animation: spin 2s linear infinite;
 }
 
-#loader:before {
+.loader:before {
    content: "";
    position: absolute;
    top: 5px;
@@ -96,7 +96,7 @@ body {
    animation: spin 3s linear infinite;
 }
 
-#loader:after {
+.loader:after {
    content: "";
    position: absolute;
    top: 15px;
