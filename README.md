@@ -67,6 +67,7 @@ Como funcionalidades especificas podemos encontrar las siguiente funciónes :
 v1.0 (26.05.2021) - Presentación proyecto
 
 ## TO-DO
+- Mejora de diseño
 - Clasificación League1 y Premier League
 - Resultados y filtros de la League1 y Premier League
 - Filtrar resultados por fechas
