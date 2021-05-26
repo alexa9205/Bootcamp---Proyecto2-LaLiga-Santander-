@@ -6,7 +6,7 @@
 }
 
 body {
-   background-color: blanchedalmond;
+   background-color: rgb(255, 255, 255);
 }
 
 
@@ -286,7 +286,7 @@ main .carousel {
       grid-gap: 10px;
       grid-auto-rows: minmax(150px, auto);
       margin-top: 40px;
-      margin-left: 40px;
+      margin-left: 10px;
    }
 
    .equiposEspania2>a {
