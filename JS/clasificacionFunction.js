@@ -79,3 +79,4 @@ function quitarspinner(){
     document.getElementById("preloader").style.display="none";
     document.getElementById("loader").style.visibility="hidden";
 }
+
