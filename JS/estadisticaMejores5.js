@@ -1,5 +1,5 @@
-function getFetch() {
-    const url = "https://api.football-data.org/v2/competitions/2014/matches"
+function getFetch(url) {
+    mostrarSpinner();
     fetch(url, {
         method: "GET",
         headers: {
@@ -21,7 +21,7 @@ function getFetch() {
         alert("Ha ocurrido un ERROR, vuelve a recargar la pagina !")
     })
 }
-getFetch();
+getFetch("https://api.football-data.org/v2/competitions/2014/matches");
 
 function crearEstadisticas(partidos) {
     let estadisticasPartido = [];
@@ -96,6 +96,7 @@ function top5mejoresAvgGoles(estadisticasPartido) {
 
     let top5estadisticas = estadisticasPartido.slice(0, 5);
     let crearTabla = document.getElementById("tablaEstadistica");
+    crearTabla.innerHTML = "";
 
     for (let i = 0; i < top5estadisticas.length; i++) {
         const tr = document.createElement("tr");
@@ -166,6 +167,7 @@ function top5menosGvisitante(estadisticasPartido2) {
 
     let top5menosG = estadisticasPartido2.slice(0, 5);
     let crearTabla2 = document.getElementById("tablaEstadistica2");
+    crearTabla2.innerHTML = "";
 
     for (let i = 0; i < top5menosG.length; i++) {
         const tr = document.createElement("tr");
@@ -190,8 +192,33 @@ function top5menosGvisitante(estadisticasPartido2) {
         }
     }
 }
+function mostrarSpinner() {
+    document.getElementById("preloader").style.display = "block";
+    document.getElementById("loader").style.visibility = "visible";
+}
 
 function quitarspinner() {
     document.getElementById("preloader").style.display = "none";
     document.getElementById("loader").style.visibility = "hidden";
 }
+
+
+let league1 = document.getElementById("league1");
+league1.addEventListener("click", () => {
+    const url2 = "https://api.football-data.org/v2/competitions/2015/matches";
+    getFetch(url2);
+
+})
+
+let premierLeague = document.getElementById("premierLeague");
+premierLeague.addEventListener("click", () => {
+    const url3 = "https://api.football-data.org/v2/competitions/2021/matches";
+    getFetch(url3);
+})
+
+let ligaSantander = document.getElementById("ligaSantander");
+ligaSantander.addEventListener("click", () => {
+    getFetch("https://api.football-data.org/v2/competitions/2014/matches");
+    filtrarNombreEquipo(partidos);
+})
+

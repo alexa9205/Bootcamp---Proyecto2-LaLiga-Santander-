@@ -3,10 +3,18 @@
    padding: 0;
    margin: 0;
    box-sizing: border-box;
+   
 }
 
 body {
    background-color: rgb(255, 255, 255);
+   overflow-x: hidden;
+   font-family:'Opens Sans',helvetica;  
+   height:100%;
+   width:101%;
+   margin: 0px;
+   padding: 0px;
+   /* overflow: hidden; */
 }
 
 
@@ -212,8 +220,17 @@ main .carousel {
    margin-top: 5px;
 }
 
+.cabecera{
+   margin-top: 5%;
+}
 
 /* Resultados */
+.subtituloForm{
+   font-size: 17px;
+   font-weight: 700;
+   margin-left: 9%;
+   margin-bottom: -30px;
+}
 
 .filtros {
    display: flex;
@@ -223,7 +240,7 @@ main .carousel {
 }
 
 .filtros .radiobotones {
-   margin-left: 25%;
+   margin-left: 23%;
    margin-top: 3%;
    display: flex;
    flex-direction: row;
@@ -238,6 +255,23 @@ main .carousel {
    font-weight: 700;
 }
 
+.tituloRes p{
+   margin-top: 100px;
+   text-align: center;
+   font-size: 20px;
+   font-weight: 700;
+   margin-bottom: 20px;
+}
+
+.btnLigas1{
+   margin-left: 9%;
+}
+
+.btnLigas1,
+.btnLigas{
+   margin-bottom: 35px;
+   margin-top: 15px;
+}
 
 
 /* Estadisticas */
@@ -257,6 +291,11 @@ main .carousel {
    text-align: center;
    margin-top: 20px;
    text-decoration: underline;
+}
+
+.top5div{
+   margin-top: 150px;
+   margin-bottom: -100px;
 }
 
 

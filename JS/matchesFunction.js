@@ -1,5 +1,10 @@
-function getFetch() {
-    const url = "https://api.football-data.org/v2/competitions/2014/matches"
+quitarAlerta1();
+quitarAlerta2();
+quitarAlerta3();
+quitarAlerta4();
+
+function getFetch(url) {
+    mostrarSpinner();
     fetch(url, {
         method: "GET",
         headers: {
@@ -10,18 +15,26 @@ function getFetch() {
             return response.json();
         }
     }).then(data => {
-
         let partidos = data.matches
 
         let buscar = document.getElementById("boton");
+        buscar.onclick = "null";
         buscar.addEventListener("click", () => {
             filtrarNombreEquipo(partidos);
         })
 
+        buscar.removeEventListener("click", () =>{
+            limpiarTabla();
+        })
+       
         let resetear = document.getElementById("botonreset");
         resetear.addEventListener("click", () => {
             resetearFiltros();
             crearTabla(partidos);
+            quitarAlerta1();
+            quitarAlerta2();
+            quitarAlerta3();
+            quitarAlerta4();
         })
 
         quitarSpinner();
@@ -32,7 +45,8 @@ function getFetch() {
         alert("Ha ocurrido un ERROR, vuelve a recargar la pagina !")
     })
 }
-getFetch();
+
+getFetch("https://api.football-data.org/v2/competitions/2014/matches");
 
 function crearTabla(partidos) {
 
@@ -98,14 +112,11 @@ function filtrarNombreEquipo(partidos) {
     let radioBoton = document.querySelector("input[type=radio]:checked")
 
     if (datosEntrada == "") {
-        alertify.alert("⚠️ Por favor, introduzca el nombre del equipo que desea buscar😀")
-        return crearTabla(partidos);
+        return alert4();
     }
 
     if (!isNaN(datosEntrada)) {
-        alertify.alert("⚠️ Solo letras, por favor 😀");
-        resetearFiltros();
-        return crearTabla(partidos);
+        return alert3();
     }
 
     let nombreEquipoInput = partidos.filter((p) => {
@@ -116,11 +127,8 @@ function filtrarNombreEquipo(partidos) {
         }
     });
 
-    if (nombreEquipoInput.length == 0) {
-        alertify.alert("⚠️ El equipo que buscas no juega en <i>LaLiga Santander</i>☹️");
-        resetearFiltros();
+    if (nombreEquipoInput.length === 0) {
         return crearTabla(partidos);
-
     }
 
     if (radioBoton === null) {
@@ -129,46 +137,115 @@ function filtrarNombreEquipo(partidos) {
 
     let filtroInput = nombreEquipoInput.filter(partidos => {
         if (radioBoton.value === "Ganado") {
-            if ((partidos.homeTeam.name.toLowerCase().includes(datosEntrada.toLowerCase()) && partidos.score.winner == "HOME_TEAM") 
-            || (partidos.awayTeam.name.toLowerCase().includes(datosEntrada.toLowerCase()) && partidos.score.winner == "AWAY_TEAM")) {
+            if ((partidos.homeTeam.name.toLowerCase().includes(datosEntrada.toLowerCase()) && partidos.score.winner == "HOME_TEAM") ||
+                (partidos.awayTeam.name.toLowerCase().includes(datosEntrada.toLowerCase()) && partidos.score.winner == "AWAY_TEAM")) {
                 return true;
             }
-         } 
+        }
 
         if (radioBoton.value === "Perdido") {
-            if ((partidos.homeTeam.name.toLowerCase().includes(datosEntrada.toLowerCase())&& partidos.score.winner == "AWAY_TEAM") 
-            || (partidos.awayTeam.name.toLowerCase().includes(datosEntrada.toLowerCase())&& partidos.score.winner == "HOME_TEAM")) {
+            if ((partidos.homeTeam.name.toLowerCase().includes(datosEntrada.toLowerCase()) && partidos.score.winner == "AWAY_TEAM") ||
+                (partidos.awayTeam.name.toLowerCase().includes(datosEntrada.toLowerCase()) && partidos.score.winner == "HOME_TEAM")) {
                 return true;
             }
         }
 
 
         if (partidos.status === "SCHEDULED" && radioBoton.value === "Proximos") {
-             return true
+            return true
         }
 
         if (partidos.score.winner === "DRAW" && radioBoton.value === "Empatado") {
             return true;
         }
 
-        if ((partidos.status === "SCHEDULED") == false && radioBoton.value === "Proximos") {
-            alertify.alert("¡No hay próximos partidos para mostrar!☹️ <p>La temporada vigente se ha acabado, pero próximamente tendrás el nuevo calendario disponible. ¡Hasta entonces puedes seguir viendo los resultados de esta temporada de tu equipo favorito!😀</p>")
-            return crearTabla(filtroInput);  
-        }
 
     })
+
+    if ((filtroInput.length == 0) && radioBoton.value === "Proximos") {
+        return alert2();
+    }
+
     crearTabla(filtroInput);
 }
 
 function resetearFiltros() {
     document.getElementById("filtro").value = "";
     var radioBoton = document.getElementsByName("estadoPartido");
-    for (value in radioBoton) {
-        radioBoton[value].checked = false;
+    for (i in radioBoton) {
+        radioBoton[i].checked = false;
     }
+}
+
+function mostrarSpinner() {
+    document.getElementById("preloader").style.display = "block";
+    document.getElementById("loader").style.visibility = "visible";
 }
 
 function quitarSpinner() {
     document.getElementById("preloader").style.display = "none";
     document.getElementById("loader").style.visibility = "hidden";
 }
+
+function alert1() {
+    let alert = document.getElementById("alerta1");
+    alert.style.display = "block";
+}
+
+function alert2() {
+    let alert2 = document.getElementById("alerta2");
+    alert2.style.display = "block";
+}
+
+function alert3() {
+    let alert3 = document.getElementById("alerta3");
+    alert3.style.display = "block";
+}
+
+function alert4() {
+    let alert = document.getElementById("alerta4");
+    alert.style.display = "block";
+}
+
+
+
+function quitarAlerta1() {
+    let alert = document.getElementById("alerta1");
+    alert.style.display = "none"
+}
+
+function quitarAlerta2() {
+    let alert2 = document.getElementById("alerta2");
+    alert2.style.display = "none"
+}
+
+function quitarAlerta3() {
+    let alert3 = document.getElementById("alerta3");
+    alert3.style.display = "none"
+}
+
+function quitarAlerta4() {
+    let alert = document.getElementById("alerta4");
+    alert.style.display = "none"
+}
+
+
+let league1 = document.getElementById("league1");
+league1.addEventListener("click", () => {
+    const url2 = "https://api.football-data.org/v2/competitions/2015/matches";
+    getFetch(url2);
+
+})
+
+let premierLeague = document.getElementById("premierLeague");
+premierLeague.addEventListener("click", () => {
+    const url3 = "https://api.football-data.org/v2/competitions/2021/matches";
+    getFetch(url3);
+})
+
+let ligaSantander = document.getElementById("ligaSantander");
+ligaSantander.addEventListener("click", () => {
+    getFetch("https://api.football-data.org/v2/competitions/2014/matches");
+    filtrarNombreEquipo(partidos);
+})
+

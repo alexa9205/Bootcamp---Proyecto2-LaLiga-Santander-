@@ -8,42 +8,56 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/Style/alertify.css" type="text/css">
   <link rel="stylesheet" href="/Style/style.css" type="text/css">
   <link rel="icon" href="/Imagenes/laliga-santander-v-300x300.png" type="image/png" />
   <title>Resultados - La Liga Santander 2020-2021</title>
 </head>
 
 <body>
-  <nav class="navbar sticky-top navbar-light bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="/Imagenes/laliga-santander-v-300x300.png" alt="" width="40" height="40"
-          class="d-inline-block align-text-top">
-      </a>
-      <ul class="nav nav-pills nav-fill">
-        <li class="nav-item">
-          <a class="nav-link active bg-danger" aria-current="page" href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active bg-danger" href="partidosLaLiga.html">Resultados</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active bg-danger" href="clasificacionLaLiga.html">Clasificacion</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active bg-danger" href="estadisticas.html">Estadisticas</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <p class="titulo">RESULTADOS DE LaLIGA SANTANDER 2020/21</p>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index2.html"><img src="/Imagenes/pelotaFutbol.jpg" alt="" width="30" height="24"
+            class="d-inline-block align-text-top">
+          <b>FootballScore</b>
+        </a></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index2.html"><b>Inicio</b></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active" aria-current="page" href="partidosLaLiga.html"><b>Resultados</b></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active" aria-current="page" href="clasificacionLaLiga.html"><b>Clasificación</b></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active" aria-current="page" href="estadisticas.html"><b>Estadisticas</b></a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            <b><i>El futbol siempre a tu alcance</i></b>
+          </span>
+        </div>
+      </div>
+    </nav>
+    <div class="tituloRes">
+  <p>RESULTADOS PARTIDOS</p></div>
   
   <div id="preloader">
     <div id="loader"></div>
   </div>
 
   <form>
+    <h2 class="subtituloForm">Seleccione primero la Liga que desea ver:</h2><br>
+    <button type="button" class="btnLigas1 btn btn-primary" id="league1">League1</button>
+    <button type="button" class="btnLigas btn btn-primary" id="premierLeague">Premier League</button>
+    <button type="button" class="btnLigas btn btn-primary" id="ligaSantander">Liga Santander</button>
     <div class="filtros">
       <div class="nombre_eq">
         <label for="filtro"><strong>Escribe el nombre del equipo que desea buscar*:</strong></label><br/>
@@ -71,6 +85,7 @@
           </div>
     </div>
   </form>
+ 
 
   <div class="container table-responsive">
     <table id="table" class="tablapartidos table table-dark table-striped border border-primary">
@@ -84,10 +99,23 @@
         </tr>
       </thead>
       <tbody id="tableMatches">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alerta1">
+        <strong>Cuidado!</strong> El equipo que buscas no juega en esta Liga!
+        </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alerta2">
+         <strong>Se acabo la temporada 😢</strong> No te preocupes, pronto tendrás disponible
+             el nuevo calendario 😀
+        </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alerta3">
+        <strong>Cuidado!</strong> Solo puedes introducir letras!
+        </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alerta4">
+         <strong>Cuidado!</strong> No has introducido el nombre del equipo que deseas buscar !
+        </div>
       </tbody>
     </table>
   </div>
-  <footer class="bg-dark text-center text-white">
+  <footer class="footer bg-dark text-center text-white">
     <div class="container p-2 pb-0">
       <section class="mb-2">
         <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/LaLiga" role="button">
@@ -102,13 +130,12 @@
       </section>
     </div>
     <div class="text-center p-3" style="background-color: black;">
-      © 2021 LaLiga
+      © 2021 FootballScore
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
   </script>
-  <script src="/JS/alertify.js"></script>
   <script src="/JS/matchesFunction.js"></script>
 </body>
 
