@@ -11,7 +11,7 @@ Facilita al usuario el acceso a las páginas web de los distintos equipos que co
 
 Para que el usuario disfrute aún más se añadieron los clubes de la Premier League (Liga Inglesa) y los clubes de la League 1 (Liga Francesa) , accediendo así a la web de cada equipo y poder estar al tanto de las ultimas noticias de los clubes más conocidos del mundo. 
 
-Para visualizar el proyecto, pulsa [aquí](http://resultados-liga.netlify.app)
+Para visualizar el proyecto, pulsa [aquí](https://footballscorematch.netlify.app/)
 
 ## Funcionalidades
 
