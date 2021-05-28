@@ -370,6 +370,15 @@ main .carousel {
       width: 70%;
    }
 
+   form .btn0{
+      display: flex;
+      flex-direction: column;
+   }
+
+   form .btnLigas{
+      margin-left: 9%;
+   }
+
    /* clasificacion */
    .titulo {
       font-size: 15px;
@@ -410,7 +419,7 @@ main .carousel {
    div table .tablaestadistica {
       font-size: 14px;
    }
-
-
-
+   
+    
 }
+
