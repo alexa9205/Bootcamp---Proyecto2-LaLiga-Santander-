@@ -65,10 +65,14 @@ Como funcionalidades especificas podemos encontrar las siguiente funciónes :
 
 ## Versiones
 v1.0 (26.05.2021) - Presentación proyecto
+v1.1 (28.05.2021) 
+- Resultados y filtros de la League1 y Premier League
+- Estadisticas con top 5equipos con mayor media de goles a favor por partido y los 5 equipos con menos goles en contra como visitante de los equipos de la League 1 y Premier League
+ 
+
 
 ## TO-DO
 - Mejora de diseño
 - Clasificación League1 y Premier League
-- Resultados y filtros de la League1 y Premier League
 - Filtrar resultados por fechas
 
