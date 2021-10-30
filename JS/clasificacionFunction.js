@@ -43,11 +43,11 @@ function crearTablaClasificacion(clasificacion) {
         let goldiferencia = clasificacion[i].goalDifference;
         let puntos = clasificacion[i].points;
 
-        let ultpartidos = clasificacion[i].form;
-        ultpartidos = ultpartidos.replace(/D/g,"🟡");
-        ultpartidos = ultpartidos.replace(/W/g,"🟢");
-        ultpartidos = ultpartidos.replace(/L/g,"🔴");
-        ultpartidos = ultpartidos.replace(/,/g,"");
+        // let ultpartidos = clasificacion[i].form;
+        // ultpartidos = ultpartidos.replace(/D/g,"🟡");
+        // ultpartidos = ultpartidos.replace(/W/g,"🟢");
+        // ultpartidos = ultpartidos.replace(/L/g,"🔴");
+        // ultpartidos = ultpartidos.replace(/,/g,"");
 
 
         let estadisticas = [
