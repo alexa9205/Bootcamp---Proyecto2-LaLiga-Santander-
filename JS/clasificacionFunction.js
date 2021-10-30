@@ -62,7 +62,6 @@ function crearTablaClasificacion(clasificacion) {
             golescontra,
             goldiferencia,
             puntos,
-            ultpartidos
         ]
 
         for (let j = 0; j < estadisticas.length; j++) {
